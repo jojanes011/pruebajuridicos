@@ -9,7 +9,7 @@ interface layoutProps {
 export default function layout({ children }: layoutProps) {
   return (
     <main className="bg-texture">
-      <Header background="bg-primary" showBorder />
+      <Header showBorder />
       {children}
       <Footer />
     </main>

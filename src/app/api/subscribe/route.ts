@@ -1,6 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: any, res: any) {
   if (req.method === "POST") {
     const { email } = req.body;
 
