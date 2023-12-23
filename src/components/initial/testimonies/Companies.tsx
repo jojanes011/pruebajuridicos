@@ -3,7 +3,7 @@ import React from "react";
 
 const Companies = () => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 pt-16">
+    <div className="grid grid-cols-2 sm:grid-cols-4 pt-16 justify-items-center">
       <div>
         <Image
           src="/images/nike.png"

@@ -8,7 +8,7 @@ import FooterSuscribe from "./FooterSuscribe";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary">
+    <footer className="bg-primary text-white">
       <div className="flex flex-col sm:flex-row justify-between py-10 space-y-8 sm:space-y-0 space-x-0 sm:space-x-8 px-9">
         <FooterContact />
         <FooterUrls />
