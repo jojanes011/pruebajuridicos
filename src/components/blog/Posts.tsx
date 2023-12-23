@@ -17,7 +17,7 @@ interface PostInterface extends SanityDocument {
 
 export default function Posts({ posts = [] }: { posts: PostInterface[] }) {
   return (
-    <main className="relative w-full mx-auto grid grid-cols-3 justify-items-center transform -translate-y-24 z-50">
+    <main className="relative w-full mx-auto gap-8 sm:gap-y-8 sm:gap-0 grid grid-cols-1 sm:grid-cols-3 justify-items-center sm:transform sm:-translate-y-24 z-50">
       {posts.map((post) => (
         <PostItem
           key={post._id}

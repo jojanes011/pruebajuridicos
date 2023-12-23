@@ -8,7 +8,7 @@ const Testimonies = () => {
       aria-labelledby="section-testimonies"
       className="bg-cover bg-no-repeat text-black py-16 bg-texture"
     >
-      <div className="flex flex-col space-y-4 w-full sm:w-[1200px] mx-auto">
+      <div className="flex flex-col space-y-4 w-full sm:w-[1200px] px-4 sm:mx-auto">
         <h2
           id="section-testimonies"
           className="text-3xl font-bold px-4 sm:px-0 text-center sm:text-left"

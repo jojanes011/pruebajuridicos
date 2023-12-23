@@ -1,7 +1,9 @@
+import { redirectWhatsapp } from "@/src/utils/functions";
 import Image from "next/image";
 import React from "react";
 
 const Service = () => {
+  const whatsappUrl = redirectWhatsapp();
   return (
     <div className="flex flex-col sm:flex-row justify-normal sm:justify-between w-full sm:w-[1200px] mx-auto bg-white rounded-b-[40px] sm:rounded-l-[40px] shadow-xl">
       <div className="flex flex-col space-y-4 sm:space-y-8 py-4 sm:py-8 px-4 sm:px-16 w-full sm:w-1/2 order-2 sm:order-1">
@@ -16,9 +18,12 @@ const Service = () => {
           <ServiceItem />
         </div>
         <div className="w-full flex flex-row justify-center sm:pt-0 pt-1 pb-4 sm:pb-0">
-          <button className="bg-secondary text-white shadow-2xl shadow-secondary py-2 sm:py-3 px-6 sm:px-8 text-sm sm:text-base rounded">
+          <a
+            href={whatsappUrl}
+            className="bg-secondary text-white shadow-2xl shadow-secondary py-2 sm:py-3 px-6 sm:px-8 text-sm sm:text-base rounded"
+          >
             Contáctanos
-          </button>
+          </a>
         </div>
       </div>
       <div className="relative sm:h-auto h-[300px] w-full sm:w-1/2">

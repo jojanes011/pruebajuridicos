@@ -20,7 +20,7 @@ const products = [
   {
     name: "Asesoría Jurídica",
     description: "Speak directly to your customers",
-    href: "/asesoria-juridica/derecho-civil",
+    href: "/servicios/derecho-civil",
     icon: (
       <Image src="/icons/menu.svg" alt="Icono Menú" width={32} height={32} />
     ),
@@ -43,7 +43,7 @@ const products = [
   },
 ];
 
-export default function Header({ showBorder = true }) {
+export default function Header({ showBorder = true, hasBackground = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -83,7 +83,8 @@ export default function Header({ showBorder = true }) {
       color="transparent"
       elevation={0}
       sx={{
-        backgroundColor: isScrolled ? "#511011" : "transparent", // MUI v5 sx prop
+        backgroundColor:
+          isScrolled || hasBackground ? "#511011" : "transparent", // MUI v5 sx prop
         transition: "background-color 0.3s",
         boxShadow: !showBorder ? "0 0 0 0.5px white" : "",
       }}
@@ -93,7 +94,7 @@ export default function Header({ showBorder = true }) {
           <Link
             href="/"
             aria-label="Inicio"
-            className="flex flex-row items-center space-x-8"
+            className="relative flex flex-row items-center space-x-8"
           >
             <Image
               src="/images/logo-white.png"
@@ -104,17 +105,20 @@ export default function Header({ showBorder = true }) {
             <h1 className="font-merriweather text-xl">JURÍDICOS Y ASOCIADOS</h1>
           </Link>
         </div>
-        <nav className="flex sm:hidden flex-row items-center justify-between w-full py-4 pl-4 pr-2">
+
+        <nav className="flex sm:hidden flex-row items-center justify-between w-full py-2 pl-4 pr-2">
           <Link
             href="/"
             aria-label="Inicio"
-            className="flex flex-row items-center space-x-8"
+            className="relative flex flex-row items-center space-x-8 h-12 w-12 sm:w-16 sm:h-16"
           >
             <Image
               src="/images/logo-white.png"
               alt="Logotipo de Jurídicos y Asociados"
-              width={64}
-              height={64}
+              layout="fill"
+              style={{
+                objectFit: "contain",
+              }}
             />
           </Link>
           <IconButton

@@ -13,18 +13,21 @@ const page = () => {
               icon="/icons/map.svg"
               color="bg-primary"
               title="Carrera 4 # 8 - 63 edificio José Henao Vélez oficina 704 Cali, Colombia."
+              margin="ml-2"
             />
             <div className="flex flex-col space-y-4 flex-1">
               <ContactItem
                 alt="Teléfono de la empresa"
                 icon="/icons/phone.svg"
                 color="bg-primary"
+                margin="ml-4"
                 title="315-214-26-33"
               />
               <ContactItem
                 alt="Teléfono de la empresa"
                 icon="/icons/phone.svg"
                 color="bg-primary"
+                margin="ml-4"
                 title="304-299-9249"
               />
             </div>
@@ -33,33 +36,38 @@ const page = () => {
             <h5 className="text-primary text-2xl font-bold">Síguenos</h5>
             <ContactItem
               alt="Whatsapp de la empresa"
-              icon="/icons/phone.svg"
+              icon="/icons/whatsapp.svg"
               color="bg-[#25D366]"
               title="Whatsapp"
+              margin="ml-8"
             />
             <ContactItem
               alt="Instagram de la empresa"
               icon="/icons/instagram.svg"
               color="bg-[#E1306C]"
               title="Instagram"
+              margin="ml-8"
             />
             <ContactItem
               alt="Tiktok de la empresa"
               icon="/icons/tiktok.svg"
               color="bg-black"
               title="Tiktok"
+              margin="ml-8"
             />
             <ContactItem
               alt="Facebook de la empresa"
               icon="/icons/facebook.svg"
               color="bg-[#3B5998]"
               title="Facebook"
+              margin="ml-8"
             />
             <ContactItem
               alt="Linkedin de la empresa"
               icon="/icons/linkedin.svg"
               color="bg-[#0E76A8]"
               title="LinkedIn"
+              margin="ml-8"
             />
           </div>
         </div>
@@ -67,19 +75,7 @@ const page = () => {
           <h3 className="text-2xl text-primary font-bold text-center pb-8">
             Información de contacto
           </h3>
-          <iframe
-            width="540"
-            height="305"
-            src="https://87f13af8.sibforms.com/serve/MUIFAF6I5x8GAkxMhwFgia7AHEPdQAXJ6D-zskdNPW1mLe7Ds7TlWfmQ8ih95YQZXGO_03ORPrNWNIGdK2Hc8FW__xeH8fL-6p05_qKLrHKdLic7T8id8jv11sJrazSSHEr7RBOoK0jFDGE6A8sygkMJlCyZlGUGpF26SBmDsVSkW7sI7vMgGX-A4QnSWX_I-pY0ueyQHOKSiPbq"
-            frameBorder="0"
-            allowFullScreen
-            style={{
-              display: "block",
-              marginLeft: "auto",
-              marginRight: "auto",
-              maxWidth: "100%",
-            }}
-          ></iframe>
+          <ContactForm />
         </div>
       </div>
       <div className="relative w-full h-96 sm:w-[1200px] sm:h-[500px] mx-auto">
