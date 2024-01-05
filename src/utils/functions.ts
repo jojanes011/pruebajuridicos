@@ -3,6 +3,6 @@ export const redirectWhatsapp = () => {
   const whatsappMessage = encodeURIComponent(
     "Hola, me gustaría obtener más información sobre Asesoría Jurídica."
   );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappLink = `https://api.whatsapp.com/message/3XGDGSOW76O3H1?autoload=1&app_absent=0`;
   return whatsappLink as string;
 };

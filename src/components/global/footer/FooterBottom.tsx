@@ -1,12 +1,9 @@
+import { redirectWhatsapp } from "@/src/utils/functions";
 import Image from "next/image";
 import React from "react";
 
 const FooterBottom = () => {
-  const whatsappNumber = "3184471432"; // Reemplaza con tu número de teléfono
-  const whatsappMessage = encodeURIComponent(
-    "Hola, me gustaría obtener más información sobre Asesoría Jurídica."
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappLink = redirectWhatsapp();
   return (
     <div className="w-full border-t border-white">
       <div className="flex flex-col items-center sm:flex-row justify-between px-4 sm:px-9 pb-4 sm:pb-0">

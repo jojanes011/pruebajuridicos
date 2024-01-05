@@ -7,7 +7,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import Link from "next/link";
 import Image from "next/image";
-import { Collapse } from "@mui/material";
+import { Collapse, Drawer } from "@mui/material";
+import { redirectWhatsapp } from "@/src/utils/functions";
 
 const products = [
   {
@@ -50,11 +51,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const [openCollapse, setOpenCollapse] = useState(false);
   const open = Boolean(anchorEl);
-  const whatsappNumber = "3184471432"; // Reemplaza con tu número de teléfono
-  const whatsappMessage = encodeURIComponent(
-    "Hola, me gustaría obtener más información sobre Asesoría Jurídica."
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const whatsappLink = redirectWhatsapp();
 
   const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -205,9 +202,13 @@ export default function Header({ showBorder = true, hasBackground = false }) {
           </div>
         </div>
       </Toolbar>
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-20 bg-primary p-4">
-          <div className="flex flex-row justify-between">
+      <Drawer
+        anchor="right"
+        open={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+      >
+        <div className="w-screen bg-primary h-screen" role="presentation">
+          <div className="flex flex-row justify-between p-4">
             <Link
               href="/"
               aria-label="Inicio"
@@ -234,78 +235,71 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               />
             </IconButton>
           </div>
-          <div className="mt-4 text-black">
-            <MenuItem
-              disableGutters
-              className="ml-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Link href="/" className="font-bold text-white">
-                Inicio
+          {/* Enlaces del Drawer */}
+          <MenuItem disableGutters className="ml-4" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/" className="font-bold text-white">
+              Inicio
+            </Link>
+          </MenuItem>
+          <button
+            aria-controls="asesoria-menu"
+            aria-haspopup="true"
+            className="w-full text-left text-white"
+            onClick={() => setOpenCollapse(true)}
+          >
+            <MenuItem disableGutters className="ml-4">
+              <div className="font-bold text-white">
+                Especialidades
+              </div>
+            </MenuItem>
+          </button>
+          <Collapse in={openCollapse} className="text-white ml-8">
+            <MenuItem>
+              <Link href="/servicios/derecho-civil">Derecho Civil</Link>
+            </MenuItem>
+            <MenuItem>
+              <Link href="/servicios/derecho-de-familia">
+                Derecho de Familia
               </Link>
             </MenuItem>
-            <button
-              aria-controls="asesoria-menu"
-              aria-haspopup="true"
-              className="w-full text-left text-white"
-              onClick={() => setOpenCollapse(true)}
-            >
-              <MenuItem
-                disableGutters
-                className="ml-2"
-              >
-                <Link href="/" className="font-bold text-white">
-                  Especialidades
-                </Link>
-              </MenuItem>
-            </button>
-            <Collapse in={openCollapse} className="text-white ml-4">
-              <MenuItem>
-                <Link href="/servicios/derecho-civil">Derecho Civil</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link href="/servicios/derecho-de-familia">
-                  Derecho de Familia
-                </Link>
-              </MenuItem>
-              <MenuItem>
-                <Link href="/servicios/derecho-penal">Derecho Penal</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link href="/servicios/derecho-laboral">Derecho Laboral</Link>
-              </MenuItem>
-            </Collapse>
-            <MenuItem
-              disableGutters
-              className="ml-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Link href="/blog" className="font-bold text-white">
-                Artículos
-              </Link>
+            <MenuItem>
+              <Link href="/servicios/derecho-penal">Derecho Penal</Link>
             </MenuItem>
-            <MenuItem
-              disableGutters
-              className="ml-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <Link href="/contacto" className="font-bold text-white">
-                Contacto
-              </Link>
+            <MenuItem>
+              <Link href="/servicios/derecho-laboral">Derecho Laboral</Link>
             </MenuItem>
-            <div className="w-full mt-4 pt-8 border-t border-t-secondary flex flex-row justify-center">
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-secondary text-white rounded py-3 px-8"
-              >
-                Contáctanos
-              </a>
-            </div>
+          </Collapse>
+          <MenuItem
+            disableGutters
+            className="ml-4"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <Link href="/blog" className="font-bold text-white">
+              Artículos
+            </Link>
+          </MenuItem>
+          <MenuItem
+            disableGutters
+            className="ml-4"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <Link href="/contacto" className="font-bold text-white">
+              Contacto
+            </Link>
+          </MenuItem>
+          <div className="w-full mt-4 pt-8 border-t border-t-secondary flex flex-row justify-center">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-secondary text-white rounded py-3 px-8"
+            >
+              Contáctanos
+            </a>
           </div>
+          {/* Agrega los demás items de menú aquí */}
         </div>
-      )}
+      </Drawer>
     </AppBar>
   );
 }
