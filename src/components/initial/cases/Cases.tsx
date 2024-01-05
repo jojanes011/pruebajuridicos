@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 const Cases = () => {
@@ -8,7 +8,18 @@ const Cases = () => {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   return (
-    <div className="bg-primary py-14 w-full flex flex-col">
+    <div className="bg-primary py-14 w-full flex flex-col relative">
+      <div className="absolute top-0 left-0 z-10">
+        {" "}
+        {/* Contenedor de la imagen */}
+        <Image
+          src="/images/circle2.png"
+          alt="Logo"
+          width={100}
+          height={100}
+        />{" "}
+        {/* Ajusta el width y height según necesites */}
+      </div>
       <div className="w-full sm:w-[1200px] px-4 sm:mx-auto flex flex-col text-center sm:text-left">
         <h2 className="text-xl sm:text-3xl font-bold mb-5">
           ¿Por qué elegirnos?
@@ -44,6 +55,14 @@ const Cases = () => {
             CONSULTA GRATIS
           </a>
         </div>
+      </div>
+      <div className="absolute bottom-0 right-8 z-20">
+        <Image
+          src="/images/circle1.png"
+          alt="Logo"
+          width={200}
+          height={100}
+        />
       </div>
     </div>
   );

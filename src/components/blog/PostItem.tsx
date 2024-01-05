@@ -37,7 +37,7 @@ const PostItem: FC<PostItemProps> = ({
   return (
     <Link
       href={slug}
-      className="w-80 flex flex-col shadow-xl bg-white text-black relative z-50"
+      className="w-80 flex flex-col shadow-xl bg-white text-black relative z-50 transition-transform duration-300 ease-in-out hover:scale-105"
     >
       <div className="relative h-52 w-full">
         <Image

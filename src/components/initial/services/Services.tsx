@@ -16,10 +16,10 @@ const arrayServices = [
     url: "/servicios/derecho-penal"
   },
   {
-    title: "Familiar",
+    title: "de Familia",
     icon: "/icons/users.svg",
     backgroundImage: "/images/derecho-familiar.jpg",
-    url: "/servicios/derecho-familiar"
+    url: "/servicios/derecho-de-familia"
   },
   {
     title: "Laboral",

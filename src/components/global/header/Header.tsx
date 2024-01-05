@@ -7,6 +7,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import Link from "next/link";
 import Image from "next/image";
+import { Collapse } from "@mui/material";
 
 const products = [
   {
@@ -18,7 +19,7 @@ const products = [
     ),
   },
   {
-    name: "Asesoría Jurídica",
+    name: "Especialidades",
     description: "Speak directly to your customers",
     href: "/servicios/derecho-civil",
     icon: (
@@ -47,6 +48,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openCollapse, setOpenCollapse] = useState(false);
   const open = Boolean(anchorEl);
   const whatsappNumber = "3184471432"; // Reemplaza con tu número de teléfono
   const whatsappMessage = encodeURIComponent(
@@ -86,8 +88,9 @@ export default function Header({ showBorder = true, hasBackground = false }) {
         backgroundColor:
           isScrolled || hasBackground ? "#511011" : "transparent", // MUI v5 sx prop
         transition: "background-color 0.3s",
-        boxShadow: !showBorder ? "0 0 0 0.5px white" : "",
+        boxShadow: showBorder ? "0 0 0 0.5px white" : "",
       }}
+      className="text-white"
     >
       <Toolbar className="w-full sm:w-[1200px] mx-auto" disableGutters>
         <div className="sm:flex flex-1 py-4 hidden">
@@ -145,7 +148,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             className="w-full whitespace-nowrap overflow-hidden text-ellipsis"
             onClick={handleClick}
           >
-            Asesoría Jurídica
+            Especialidades
           </button>
           <Menu
             id="asesoria-menu"
@@ -164,7 +167,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             slotProps={{
               paper: {
                 style: {
-                  width: "160px",
+                  width: "180px",
                 },
               },
             }}
@@ -173,7 +176,9 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               <Link href="/servicios/derecho-civil">Derecho Civil</Link>
             </MenuItem>
             <MenuItem>
-              <Link href="/servicios/derecho-familiar">Derecho Familiar</Link>
+              <Link href="/servicios/derecho-de-familia">
+                Derecho de Familia
+              </Link>
             </MenuItem>
             <MenuItem>
               <Link href="/servicios/derecho-penal">Derecho Penal</Link>
@@ -230,18 +235,64 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             </IconButton>
           </div>
           <div className="mt-4 text-black">
-            {products.map((product) => (
+            <MenuItem
+              disableGutters
+              className="ml-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Link href="/" className="font-bold text-white">
+                Inicio
+              </Link>
+            </MenuItem>
+            <button
+              aria-controls="asesoria-menu"
+              aria-haspopup="true"
+              className="w-full text-left text-white"
+              onClick={() => setOpenCollapse(true)}
+            >
               <MenuItem
                 disableGutters
                 className="ml-2"
-                key={product.name}
-                onClick={() => setMobileMenuOpen(false)}
               >
-                <Link href={product.href} className="font-bold text-white">
-                  {product.name}
+                <Link href="/" className="font-bold text-white">
+                  Especialidades
                 </Link>
               </MenuItem>
-            ))}
+            </button>
+            <Collapse in={openCollapse} className="text-white ml-4">
+              <MenuItem>
+                <Link href="/servicios/derecho-civil">Derecho Civil</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/servicios/derecho-de-familia">
+                  Derecho de Familia
+                </Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/servicios/derecho-penal">Derecho Penal</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link href="/servicios/derecho-laboral">Derecho Laboral</Link>
+              </MenuItem>
+            </Collapse>
+            <MenuItem
+              disableGutters
+              className="ml-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Link href="/blog" className="font-bold text-white">
+                Artículos
+              </Link>
+            </MenuItem>
+            <MenuItem
+              disableGutters
+              className="ml-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <Link href="/contacto" className="font-bold text-white">
+                Contacto
+              </Link>
+            </MenuItem>
             <div className="w-full mt-4 pt-8 border-t border-t-secondary flex flex-row justify-center">
               <a
                 href={whatsappLink}

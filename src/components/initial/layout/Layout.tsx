@@ -1,3 +1,5 @@
+"use client";
+import { Slide } from "react-awesome-reveal";
 import Footer from "../../global/footer/Footer";
 import Header from "../../global/header/Header";
 
@@ -8,7 +10,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <main className="flex min-h-screen flex-col w-full">
-      <Header />
+      <Slide direction="down">
+        <Header showBorder={false} />
+      </Slide>
       {children}
       <Footer />
     </main>

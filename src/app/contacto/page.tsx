@@ -1,8 +1,17 @@
 import ContactItem from "@/src/components/contacto/ContactItem";
 import ContactForm from "@/src/components/global/contact/ContactForm";
+import { redirectWhatsapp } from "@/src/utils/functions";
 import React from "react";
 
 const page = () => {
+  const whatsappUrl = redirectWhatsapp();
+  const instagramUrl =
+    "https://www.instagram.com/juridicosasociados_?igsh=MXhsdWZ5YmN5NzNnOA==";
+  const tiktokUrl =
+    "https://www.tiktok.com/@juridicosasociados_?_t=8iSN50ZKind&_r=1";
+  const facebookUrl =
+    "https://www.facebook.com/juridicos.y.asociados.co?mibextid=LQQJ4d";
+  const linkedinUrl = "#";
   return (
     <section className="py-16 w-full sm:w-[1200px] px-4 sm:px-0 mx-auto flex flex-col space-y-16">
       <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-16 justify-center space-y-16 sm:space-y-0">
@@ -40,6 +49,7 @@ const page = () => {
               color="bg-[#25D366]"
               title="Whatsapp"
               margin="ml-8"
+              url={whatsappUrl}
             />
             <ContactItem
               alt="Instagram de la empresa"
@@ -47,6 +57,7 @@ const page = () => {
               color="bg-[#E1306C]"
               title="Instagram"
               margin="ml-8"
+              url={instagramUrl}
             />
             <ContactItem
               alt="Tiktok de la empresa"
@@ -54,6 +65,7 @@ const page = () => {
               color="bg-black"
               title="Tiktok"
               margin="ml-8"
+              url={tiktokUrl}
             />
             <ContactItem
               alt="Facebook de la empresa"
@@ -61,6 +73,7 @@ const page = () => {
               color="bg-[#3B5998]"
               title="Facebook"
               margin="ml-8"
+              url={facebookUrl}
             />
             <ContactItem
               alt="Linkedin de la empresa"
@@ -68,6 +81,7 @@ const page = () => {
               color="bg-[#0E76A8]"
               title="LinkedIn"
               margin="ml-8"
+              url={linkedinUrl}
             />
           </div>
         </div>

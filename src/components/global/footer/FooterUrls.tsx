@@ -14,7 +14,7 @@ const FooterUrls = () => {
           <a href="/">Inicio</a>
         </li>
         <li>
-          <a href="/servicios/derecho-penal">Asesoría Jurídica</a>
+          <a href="/servicios/derecho-penal">Especialidades</a>
         </li>
         <li>
           <a href="/nosotros">Nosotros</a>

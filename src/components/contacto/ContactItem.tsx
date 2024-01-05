@@ -7,6 +7,7 @@ interface ContactItemProps {
   alt: string;
   color: string;
   margin: string;
+  url?: string;
 }
 
 const ContactItem: FC<ContactItemProps> = ({
@@ -15,16 +16,19 @@ const ContactItem: FC<ContactItemProps> = ({
   alt,
   color,
   margin,
+  url = "#",
 }) => {
   return (
-    <div
+    <a
+      href={url}
+      target="_blank"
       className={`flex-1 rounded-lg text-white px-4 py-2 ${color} w-52 sm:w-52 flex justify-start items-center`}
     >
       <Image src={icon} alt={alt} width={24} height={24} />
       <div className={`${margin}`}>
         <span>{title}</span>
       </div>
-    </div>
+    </a>
   );
 };
 

@@ -20,7 +20,7 @@ const TeamMember: FC<TeamMemberProps> = ({ colSpan }) => {
       <ul className="list-inside list-disc text-tertiary">
         <li>Derecho Penal</li>
         <li>Derecho Civil</li>
-        <li>Derecho Familiar</li>
+        <li>Derecho de Familia</li>
         <li>Derecho Laboral</li>
         <li>Derecho Aeronáutico</li>
       </ul>
