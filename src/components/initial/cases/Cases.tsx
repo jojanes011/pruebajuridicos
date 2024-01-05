@@ -42,7 +42,7 @@ const Cases = () => {
             <p className="text-xl font-bold">RECUPERADOS</p>
           </div>
         </div>
-        <div>
+        <div className="z-30">
           <a
             href={whatsappLink}
             target="_blank"

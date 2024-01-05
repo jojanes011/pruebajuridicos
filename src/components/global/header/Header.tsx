@@ -236,7 +236,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             </IconButton>
           </div>
           {/* Enlaces del Drawer */}
-          <MenuItem disableGutters className="ml-4" onClick={() => setMobileMenuOpen(false)}>
+          <MenuItem disableGutters className="pl-4" onClick={() => setMobileMenuOpen(false)}>
             <Link href="/" className="font-bold text-white">
               Inicio
             </Link>
@@ -247,13 +247,13 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             className="w-full text-left text-white"
             onClick={() => setOpenCollapse(true)}
           >
-            <MenuItem disableGutters className="ml-4">
+            <MenuItem disableGutters className="pl-4">
               <div className="font-bold text-white">
                 Especialidades
               </div>
             </MenuItem>
           </button>
-          <Collapse in={openCollapse} className="text-white ml-8">
+          <Collapse in={openCollapse} className="text-white pl-6">
             <MenuItem>
               <Link href="/servicios/derecho-civil">Derecho Civil</Link>
             </MenuItem>
@@ -271,7 +271,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
           </Collapse>
           <MenuItem
             disableGutters
-            className="ml-4"
+            className="pl-4"
             onClick={() => setMobileMenuOpen(false)}
           >
             <Link href="/blog" className="font-bold text-white">
@@ -280,7 +280,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
           </MenuItem>
           <MenuItem
             disableGutters
-            className="ml-4"
+            className="pl-4"
             onClick={() => setMobileMenuOpen(false)}
           >
             <Link href="/contacto" className="font-bold text-white">
