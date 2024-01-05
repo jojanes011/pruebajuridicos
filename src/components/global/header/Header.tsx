@@ -236,8 +236,8 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             </IconButton>
           </div>
           {/* Enlaces del Drawer */}
-          <MenuItem disableGutters className="pl-4" onClick={() => setMobileMenuOpen(false)}>
-            <Link href="/" className="font-bold text-white">
+          <MenuItem disableGutters onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/" className="font-bold text-white pl-4">
               Inicio
             </Link>
           </MenuItem>
@@ -247,10 +247,8 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             className="w-full text-left text-white"
             onClick={() => setOpenCollapse(true)}
           >
-            <MenuItem disableGutters className="pl-4">
-              <div className="font-bold text-white">
-                Especialidades
-              </div>
+            <MenuItem disableGutters>
+              <div className="font-bold text-white pl-4">Especialidades</div>
             </MenuItem>
           </button>
           <Collapse in={openCollapse} className="text-white pl-6">
@@ -269,21 +267,13 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               <Link href="/servicios/derecho-laboral">Derecho Laboral</Link>
             </MenuItem>
           </Collapse>
-          <MenuItem
-            disableGutters
-            className="pl-4"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <Link href="/blog" className="font-bold text-white">
+          <MenuItem disableGutters onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/blog" className="font-bold text-white pl-4">
               Artículos
             </Link>
           </MenuItem>
-          <MenuItem
-            disableGutters
-            className="pl-4"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <Link href="/contacto" className="font-bold text-white">
+          <MenuItem disableGutters onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/contacto" className="font-bold text-white pl-4">
               Contacto
             </Link>
           </MenuItem>
