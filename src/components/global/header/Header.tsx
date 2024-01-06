@@ -10,41 +10,6 @@ import Image from "next/image";
 import { Collapse, Drawer } from "@mui/material";
 import { redirectWhatsapp } from "@/src/utils/functions";
 
-const products = [
-  {
-    name: "Inicio",
-    description: "Get a better understanding of your traffic",
-    href: "/",
-    icon: (
-      <Image src="/icons/menu.svg" alt="Icono Menú" width={32} height={32} />
-    ),
-  },
-  {
-    name: "Especialidades",
-    description: "Speak directly to your customers",
-    href: "/servicios/derecho-civil",
-    icon: (
-      <Image src="/icons/menu.svg" alt="Icono Menú" width={32} height={32} />
-    ),
-  },
-  {
-    name: "Artículos",
-    description: "Your customers’ data will be safe and secure",
-    href: "/blog",
-    icon: (
-      <Image src="/icons/menu.svg" alt="Icono Menú" width={32} height={32} />
-    ),
-  },
-  {
-    name: "Contacto",
-    description: "Connect with third-party tools",
-    href: "/contacto",
-    icon: (
-      <Image src="/icons/menu.svg" alt="Icono Menú" width={32} height={32} />
-    ),
-  },
-];
-
 export default function Header({ showBorder = true, hasBackground = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -135,10 +100,10 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             />
           </IconButton>
         </nav>
-        <div className="hidden sm:flex flex-1 space-x-8 py-4 justify-end">
-          <MenuItem>
-            <Link href="/">Inicio</Link>
-          </MenuItem>
+        <div className="hidden sm:flex flex-row items-center flex-1 space-x-8 py-4 justify-end">
+          <Link href="/">
+            <MenuItem>Inicio</MenuItem>
+          </Link>
           <button
             aria-controls="asesoria-menu"
             aria-haspopup="true"
@@ -169,27 +134,25 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               },
             }}
           >
-            <MenuItem>
-              <Link href="/servicios/derecho-civil">Derecho Civil</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href="/servicios/derecho-de-familia">
-                Derecho de Familia
-              </Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href="/servicios/derecho-penal">Derecho Penal</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link href="/servicios/derecho-laboral">Derecho Laboral</Link>
-            </MenuItem>
+            <Link href="/servicios/derecho-civil">
+              <MenuItem>Derecho Civil</MenuItem>
+            </Link>
+            <Link href="/servicios/derecho-de-familia">
+              <MenuItem>Derecho de Familia</MenuItem>
+            </Link>
+            <Link href="/servicios/derecho-penal">
+              <MenuItem>Derecho Penal</MenuItem>
+            </Link>
+            <Link href="/servicios/derecho-laboral">
+              <MenuItem>Derecho Laboral</MenuItem>
+            </Link>
           </Menu>
-          <MenuItem>
-            <Link href="/blog">Artículos</Link>
-          </MenuItem>
-          <MenuItem>
-            <Link href="/contacto">Contacto</Link>
-          </MenuItem>
+          <Link href="/blog">
+            <MenuItem>Artículos</MenuItem>
+          </Link>
+          <Link href="/contacto">
+            <MenuItem>Contacto</MenuItem>
+          </Link>
           <div className="flex flex-row justify-center">
             <a
               href={whatsappLink}
