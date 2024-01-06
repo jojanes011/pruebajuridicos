@@ -287,7 +287,6 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               Contáctanos
             </a>
           </div>
-          {/* Agrega los demás items de menú aquí */}
         </div>
       </Drawer>
     </AppBar>
