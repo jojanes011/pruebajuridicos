@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'api-key': process.env.SENDINBLUE_API_KEY!,
+      'api-key': process.env.SENDINBLUE_API_KE!,
     },
     body: JSON.stringify(contactData),
   };
