@@ -24,8 +24,7 @@ const FooterContact = () => {
       <div className="flex flex-row items-center space-x-4">
         <Image src="/icons/map.svg" alt="Icono Map" width={24} height={24} />
         <p>
-          Carrera 4 # 8 - 63 edificio José Henao Vélez oficina 704 Cali,
-          Colombia.
+          Calle 10 # 4-40, oficina 801, Edificio Bolsa de occidente.
         </p>
       </div>
     </section>
