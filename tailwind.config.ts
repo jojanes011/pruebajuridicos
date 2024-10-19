@@ -12,7 +12,10 @@ const config: Config = {
         merriweather: ["Merriweather", "serif"], // Asegúrate de que el nombre coincida con el nombre de la fuente
       },
       backgroundImage: {
-        texture: "url('/images/texture.png')",
+        texture: "url('/images/texture_1.webp')",
+        texture2: "url('/images/texture.webp')",
+        cuadrados: "url('/images/cuadrados.png')",
+        marmolBlack: "url('/images/shadows.jpg')",
       },
     },
     screens: {

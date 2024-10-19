@@ -7,12 +7,12 @@ interface layoutProps {
 
 export default function layout({ children }: layoutProps) {
   return (
-    <main className="bg-texture">
+    <main className="bg-texture2 bg-cover bg-no-repeat">
       <Title
         title="Contáctanos"
         subtitle="Soluciones reales para problemas reales"
         showBorder={false}
-        backgroundImage="/images/contacto.jpg"
+        backgroundImage="/images/contacto.webp"
       />
       {children}
       <Footer />

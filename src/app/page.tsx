@@ -15,7 +15,7 @@ export default function Home() {
       <Services />
       <Team />
       <Cases />
-      <Testimonies />
+      {/* <Testimonies /> */}
       <Blog />
     </Layout>
   );

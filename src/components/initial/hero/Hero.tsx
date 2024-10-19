@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
@@ -9,34 +10,41 @@ const Hero = () => {
         aria-label="Hero Section"
         className="w-full sm:w-[1200px] mx-auto"
       >
-        {/* <video
-        autoPlay
-        loop
-        muted
-        style={{
-          position: "absolute",
-          width: "100%",
-          left: 0,
-          top: 0,
-          height: "148%",
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-        src="/video.mp4" // Cambia esto por la ruta de tu video
-      /> */}
-        <h1 className="font-merriweather text-2xl sm:text-4xl mb-7 mt-20 mx-4">
-          JURÍDICOS Y ASOCIADOS ®
-        </h1>
-        <p className="font-merriweather text-2xl sm:text-4xl w-auto sm:w-96 pl-3 sm:pl-6 border-l-4 border-secondary mx-4">
-          Soluciones Reales A<br />
-          Problemas Reales
-        </p>
-        <div className="mt-14 mx-4">
-          <Link href="/servicios/derecho-penal">
-            <button className="text-white rounded py-2 sm:py-3 px-8 bg-secondary">
-              Conoce más
-            </button>
-          </Link>
+        <div className="flex flex-row justify-between">
+          <div>
+            <h1 className="font-merriweather text-2xl sm:text-4xl mb-7 mt-20 mx-4">
+              JURÍDICOS Y ASOCIADOS ®
+            </h1>
+            <p className="font-merriweather text-2xl sm:text-4xl w-auto sm:w-96 pl-3 sm:pl-6 border-l-4 border-secondary mx-4">
+              Soluciones Reales A<br />
+              Problemas Reales
+            </p>
+            <div className="mt-14 mx-4">
+              <Link href="/servicios/derecho-penal">
+                <button className="text-white rounded py-2 sm:py-3 px-8 bg-secondary">
+                  Conoce más
+                </button>
+              </Link>
+            </div>
+          </div>
+          <div className="hidden sm:flex absolute right-0 top-40 sm:w-[500px] sm:h-[700px] w-[300px] h-[500px]">
+            <Image
+              alt="Iustita"
+              src="/images/iustita.png"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-10 relative"
+            />
+          </div>
+          <div className="flex sm:hidden absolute right-0 top-72 sm:top-0 sm:bottom-0 sm:w-[500px] sm:h-[700px] w-[300px] h-[500px]">
+            <Image
+              alt="Iustita"
+              src="/images/iustita.png"
+              layout="fill"
+              objectFit="cover"
+              className="opacity-10 relative"
+            />
+          </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-between space-y-6 sm:space-y-0 sm:space-x-8 mt-9 sm:mt-48 mx-4">
           <div>

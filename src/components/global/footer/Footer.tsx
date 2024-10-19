@@ -13,7 +13,7 @@ const Footer = () => {
         <FooterContact />
         <FooterUrls />
         <FooterMaps />
-        <FooterSuscribe />
+        {/* <FooterSuscribe /> */}
       </div>
       <FooterBottom />
     </footer>

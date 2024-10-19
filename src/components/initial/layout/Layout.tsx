@@ -10,9 +10,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <main className="flex min-h-screen flex-col w-full">
-      <Slide direction="down">
-        <Header showBorder={false} />
-      </Slide>
+      <Header showBorder={false} />
       {children}
       <Footer />
     </main>

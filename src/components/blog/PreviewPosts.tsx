@@ -25,7 +25,7 @@ export default function PreviewPosts({
 }: {
   posts: PostInterface[];
 }) {
-  const [data] = useLiveQuery(posts, postsQuery);
+  const [data]: any = useLiveQuery(posts, postsQuery);
 
   return <Posts posts={data} />;
 }

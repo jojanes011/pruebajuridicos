@@ -71,7 +71,7 @@ const ContactForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col space-y-4 bg-white border border-primary text-primary rounded-lg p-8 mx-auto"
+      className="flex flex-col space-y-4 bg-white bg-opacity-80 border border-primary text-primary rounded-lg p-8 mx-auto"
     >
       <Snackbar
         open={openAlert.open}

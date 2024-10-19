@@ -17,9 +17,6 @@ const FooterUrls = () => {
           <a href="/servicios/derecho-penal">Especialidades</a>
         </li>
         <li>
-          <a href="/nosotros">Nosotros</a>
-        </li>
-        <li>
           <a href="/blog">Artículos</a>
         </li>
         <li>

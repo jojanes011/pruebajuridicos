@@ -1,5 +1,3 @@
-// ./nextjs-app/app/[slug]/page.tsx
-
 import { SanityDocument } from "@sanity/client";
 import { postPathsQuery, postQuery, postsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
@@ -8,8 +6,6 @@ import Post from "@/src/components/blog/Post";
 import PreviewProvider from "@/src/components/blog/PreviewProvider";
 import PreviewPost from "@/src/components/blog/PreviewPost";
 import { draftMode } from "next/headers";
-import Image from "next/image";
-import Link from "next/link";
 import PostItem from "@/src/components/blog/PostItem";
 
 interface PostInterface extends SanityDocument {
@@ -23,18 +19,17 @@ interface PostInterface extends SanityDocument {
     };
   };
   publishedAt: string;
+  body: any[]; // Aseguramos que body sea siempre un array para evitar errores de tipo
 }
 
-// Prepare Next.js to know which routes already exist
+// Genera rutas estáticas a partir de los slugs de los posts
 export async function generateStaticParams() {
-  // Important, use the plain Sanity Client here
   const posts = await client.fetch(postPathsQuery);
-
   return posts;
 }
 
 export default async function Page({ params }: { params: any }) {
-  const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
+  const post = await sanityFetch<PostInterface>({ query: postQuery, params });
   const posts = await sanityFetch<PostInterface[]>({ query: postsQuery });
   const isDraftMode = draftMode().isEnabled;
   const lastThreePosts = posts.slice(-3);
@@ -46,24 +41,37 @@ export default async function Page({ params }: { params: any }) {
       </PreviewProvider>
     );
   }
+
   return (
-    <main className="mx-auto w-full px-4 sm:w-[1200px] sm:py-32 text-black">
-      <section className="py-16 flex flex-col sm:flex-row space-y-16 sm:space-y-0 sm:space-x-8 justify-between">
+    <main className="mx-auto w-full px-4 sm:w-[1200px] sm:pb-32 text-black">
+      <section className="py-16 flex flex-col space-y-24 justify-between">
+        {/* Se muestra el post principal */}
         <Post posts={posts} post={post} />
-        <div className="sm:border-l sm:border-l-primary sm:pl-6 w-full flex flex-col items-center space-y-12 mx-auto">
+        <hr className="bg-primary" />
+        {/* Sección de otros artículos */}
+        <div className="w-full flex flex-col items-center space-y-12 mx-auto">
           <h4 className="font-bold text-3xl w-80 text-center">
             OTROS ARTÍCULOS
           </h4>
-          {lastThreePosts.map((post) => (
-            <PostItem
-              key={post._id}
-              slug={`/blog/${post.slug.current}`}
-              mainImage={post.mainImage}
-              title={post.title}
-              date={post.publishedAt}
-              body={posts[0].body[0].children[0].text}
-            />
-          ))}
+          <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-16 space-y-8 sm:space-y-0 justify-between">
+            {lastThreePosts.map((post) => (
+              <PostItem
+                key={post._id}
+                slug={`/blog/${post.slug.current}`}
+                mainImage={post.mainImage}
+                title={post.title}
+                date={new Date(post.publishedAt).toLocaleDateString("es-ES", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+                body={
+                  post.body?.[0]?.children?.[0]?.text ||
+                  "Sin contenido disponible"
+                }
+              />
+            ))}
+          </div>
         </div>
       </section>
     </main>

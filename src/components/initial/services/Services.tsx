@@ -6,25 +6,25 @@ const arrayServices = [
   {
     title: "Civil",
     icon: "/icons/civil.svg",
-    backgroundImage: "/images/derecho-civil.jpg",
+    backgroundImage: "/images/derecho-civil.webp",
     url: "/servicios/derecho-civil"
   },
   {
     title: "Penal",
     icon: "/icons/penal.svg",
-    backgroundImage: "/images/derecho-penal.jpg",
+    backgroundImage: "/images/derecho-penal.webp",
     url: "/servicios/derecho-penal"
   },
   {
     title: "de Familia",
     icon: "/icons/users.svg",
-    backgroundImage: "/images/derecho-familiar.jpg",
+    backgroundImage: "/images/derecho-familiar.webp",
     url: "/servicios/derecho-de-familia"
   },
   {
     title: "Laboral",
     icon: "/icons/contract.svg",
-    backgroundImage: "/images/derecho-laboral.jpg",
+    backgroundImage: "/images/derecho-laboral.webp",
     url: "/servicios/derecho-laboral"
   },
 ];

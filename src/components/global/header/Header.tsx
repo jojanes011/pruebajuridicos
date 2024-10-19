@@ -26,6 +26,14 @@ export default function Header({ showBorder = true, hasBackground = false }) {
     setAnchorEl(null);
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    // Asegura que el colapso se cierre al cerrar el menú móvil
+    if (mobileMenuOpen) {
+      setOpenCollapse(false);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       // Cambia el estado cuando el scroll pasa 100px, por ejemplo
@@ -48,7 +56,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
       elevation={0}
       sx={{
         backgroundColor:
-          isScrolled || hasBackground ? "#511011" : "transparent", // MUI v5 sx prop
+          isScrolled || hasBackground ? "#511011" : "transparent",
         transition: "background-color 0.3s",
         boxShadow: showBorder ? "0 0 0 0.5px white" : "",
       }}
@@ -71,6 +79,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
           </Link>
         </div>
 
+        {/* Menú móvil */}
         <nav className="flex sm:hidden flex-row items-center justify-between w-full py-2 pl-4 pr-2">
           <Link
             href="/"
@@ -90,7 +99,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             edge="start"
             color="inherit"
             aria-label="open drawer"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={toggleMobileMenu}
           >
             <Image
               src="/icons/menu.svg"
@@ -100,6 +109,8 @@ export default function Header({ showBorder = true, hasBackground = false }) {
             />
           </IconButton>
         </nav>
+
+        {/* Menú principal en escritorio */}
         <div className="hidden sm:flex flex-row items-center flex-1 space-x-8 py-4 justify-end">
           <Link href="/">
             <MenuItem>Inicio</MenuItem>
@@ -165,10 +176,13 @@ export default function Header({ showBorder = true, hasBackground = false }) {
           </div>
         </div>
       </Toolbar>
+
+      {/* Drawer del menú móvil */}
       <Drawer
-        anchor="right"
+        anchor="left"
         open={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
+        onClose={toggleMobileMenu}
+        transitionDuration={300} // Ajusta la duración de la animación
       >
         <div className="w-screen bg-primary h-screen" role="presentation">
           <div className="flex flex-row justify-between p-4">
@@ -188,7 +202,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               edge="start"
               color="inherit"
               aria-label="close drawer"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={toggleMobileMenu}
             >
               <Image
                 src="/icons/close.svg"
@@ -198,17 +212,18 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               />
             </IconButton>
           </div>
+
           {/* Enlaces del Drawer */}
-          <MenuItem disableGutters onClick={() => setMobileMenuOpen(false)}>
+          <MenuItem disableGutters onClick={toggleMobileMenu}>
             <Link href="/" className="font-bold text-white pl-4">
               Inicio
             </Link>
           </MenuItem>
           <button
-            aria-controls="asesoria-menu"
+            aria-controls="especialidades-menu"
             aria-haspopup="true"
             className="w-full text-left text-white"
-            onClick={() => setOpenCollapse(true)}
+            onClick={() => setOpenCollapse(!openCollapse)}
           >
             <MenuItem disableGutters>
               <div className="font-bold text-white pl-4">Especialidades</div>
@@ -230,12 +245,12 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               <Link href="/servicios/derecho-laboral">Derecho Laboral</Link>
             </MenuItem>
           </Collapse>
-          <MenuItem disableGutters onClick={() => setMobileMenuOpen(false)}>
+          <MenuItem disableGutters onClick={toggleMobileMenu}>
             <Link href="/blog" className="font-bold text-white pl-4">
               Artículos
             </Link>
           </MenuItem>
-          <MenuItem disableGutters onClick={() => setMobileMenuOpen(false)}>
+          <MenuItem disableGutters onClick={toggleMobileMenu}>
             <Link href="/contacto" className="font-bold text-white pl-4">
               Contacto
             </Link>

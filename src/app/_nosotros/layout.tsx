@@ -13,7 +13,7 @@ export default function layout({ children }: layoutProps) {
         subtitle="Profesionales Dedicados a Brindar Soluciones Legales con
           Integridad y Excelencia"
         showBorder={false}
-        backgroundImage="/images/nosotros.jpg"
+        backgroundImage="/images/nosotros.webp"
       />
       {children}
       <Footer />

@@ -61,7 +61,6 @@ const Testimonies = () => {
             </div>
           </div>
         </div>
-        <Companies />
       </div>
     </section>
   );

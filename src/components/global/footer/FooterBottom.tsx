@@ -9,11 +9,14 @@ const FooterBottom = () => {
       <div className="flex flex-col items-center sm:flex-row justify-between px-4 sm:px-9 pb-4 sm:pb-0">
         <div className="py-5 text-center sm:text-left">
           <span className="text-lg font-bold">
-            © 2023 Jurídicos y Asociados. Todos Los Derechos Reservados.
+            © 2024 Jurídicos y Asociados. Todos Los Derechos Reservados.
           </span>
         </div>
         <div className="flex flex-row space-x-8">
-          <a target="_blank" href="https://www.facebook.com/juridicos.y.asociados.co?mibextid=LQQJ4d">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/juridicos.y.asociados.co"
+          >
             <Image
               src="/icons/facebook.svg"
               alt="Icono Facebook"
@@ -21,7 +24,10 @@ const FooterBottom = () => {
               height={32}
             />
           </a>
-          <a target="_blank" href="https://www.instagram.com/juridicosasociados_?igsh=MXhsdWZ5YmN5NzNnOA==">
+          <a
+            target="_blank"
+            href="https://www.instagram.com/juridicosyasociados/"
+          >
             <Image
               src="/icons/instagram.svg"
               alt="Icono Instagram"
@@ -33,6 +39,14 @@ const FooterBottom = () => {
             <Image
               src="/icons/whatsapp.svg"
               alt="Icono Whatsapp"
+              width={32}
+              height={32}
+            />
+          </a>
+          <a target="_blank" href="https://www.tiktok.com/@juridicosasociados">
+            <Image
+              src="/icons/tiktok.svg"
+              alt="Icono Tiktok"
               width={32}
               height={32}
             />

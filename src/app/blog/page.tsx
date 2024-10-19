@@ -40,7 +40,7 @@ const page = async () => {
         title="Blog Jurídico"
         subtitle="Perspectivas y Consejos Legales Actualizados"
         showBorder={false}
-        backgroundImage="/images/blog.jpg"
+        backgroundImage="/images/blog.webp"
       />
       <section className="py-16 w-full sm:w-[1200px] mx-auto">
         <Posts posts={posts} />
