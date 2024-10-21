@@ -24,7 +24,7 @@ const Team = () => {
           img="/images/equipo/jairo.jpg"
         />
         <TeamMember
-          title="Jorge Cediel"
+          title="Jorge Cediel Teran"
           job="Abogado de la firma"
           img="/images/equipo/jorge.jpg"
         />
