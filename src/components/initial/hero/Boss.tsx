@@ -9,7 +9,7 @@ const Boss = () => {
       <section className="bg-white flex flex-col sm:flex-row items-start sm:items-center mt-20 sm:mt-36 w-full">
         <div className="w-full sm:w-1/3">
           <Image
-            src="/images/jairo.png"
+            src="/images/equipo/jairo.jpg"
             alt="Jairo Abogado"
             width={500}
             height={300}

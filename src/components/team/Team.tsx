@@ -16,11 +16,24 @@ const Team = () => {
           Excelencia
         </p>
       </div>
-      <div className="w-full sm:w-[1200px] grid grid-cols-1 sm:grid-cols-3 place-items-center mx-auto">
-        <TeamMember colSpan="col-span-1 sm:col-span-3" />
-        <TeamMember />
-        <TeamMember />
-        <TeamMember />
+      <div className="w-full sm:w-[1200px] grid grid-cols-1 sm:grid-cols-3 place-items-center place-content-between mx-auto py-8 gap-8">
+        <TeamMember
+          colSpan="col-span-1 sm:col-span-3"
+          title="Jairo Iván Florez Guerrero"
+          job="Fundador de la firma"
+          img="/images/equipo/jairo.jpg"
+        />
+        <TeamMember
+          title="Jorge Cediel"
+          job="Abogado de la firma"
+          img="/images/equipo/jorge.jpg"
+        />
+        <TeamMember
+          colSpan="place-self-center sm:place-self-end col-span-1 sm:col-span-2"
+          title="Laura Isabel Gutiérrez Perez y Soto"
+          job="Abogada de la firma"
+          img="/images/equipo/laura.jpg"
+        />
       </div>
     </section>
   );
