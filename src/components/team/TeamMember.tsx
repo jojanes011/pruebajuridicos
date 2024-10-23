@@ -10,7 +10,7 @@ interface TeamMemberProps {
 
 const TeamMember: FC<TeamMemberProps> = ({ colSpan, img, title, job }) => {
   return (
-    <div className={`flex flex-col space-y-3 ${colSpan}`}>
+    <div className={`flex flex-col space-y-2 ${colSpan}`}>
       <Image
         src={img}
         alt={title}

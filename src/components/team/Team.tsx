@@ -21,7 +21,7 @@ const Team = () => {
           colSpan="col-span-1 sm:col-span-3"
           title="Jairo Iván Florez Guerrero"
           job="Fundador de la firma"
-          img="/images/equipo/jairo.jpg"
+          img="/images/equipo/jairo2.jpg"
         />
         <TeamMember
           title="Jorge Cediel Teran"
@@ -29,7 +29,11 @@ const Team = () => {
           img="/images/equipo/jorge.jpg"
         />
         <TeamMember
-          colSpan="place-self-center sm:place-self-end col-span-1 sm:col-span-2"
+          title="María Andreina Portilla"
+          job="Abogado de la firma"
+          img="/images/equipo/maria.jpg"
+        />
+        <TeamMember
           title="Laura Isabel Gutiérrez Perez y Soto"
           job="Abogada de la firma"
           img="/images/equipo/laura.jpg"
