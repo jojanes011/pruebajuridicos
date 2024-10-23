@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
-      "api-key": "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",
+      "api-key": process.env.SENDINBLUE_API_KEY!,
     },
     body: JSON.stringify(emailData),
   };
