@@ -31,10 +31,10 @@ const Title: FC<TitleProps> = ({
           className="absolute z-20 brightness-50" // La imagen de fondo con opacidad
         />
         <div className="relative z-30 flex-col">
-          <h1 className="font-merriweather text-3xl font-black pt-16 text-center">
+          <h1 className=" text-3xl font-black pt-16 text-center">
             {title}
           </h1>
-          <h2 className="font-merriweather text-3xl text-center font-light">
+          <h2 className=" text-3xl text-center font-light">
             {subtitle}
           </h2>
         </div>

@@ -12,10 +12,10 @@ const Hero = () => {
       >
         <div className="flex flex-row justify-between">
           <div>
-            <h1 className="font-merriweather text-2xl sm:text-4xl mb-7 mt-20 mx-4">
+            <h1 className=" text-2xl sm:text-4xl mb-7 mt-20 mx-4">
               JURÍDICOS Y ASOCIADOS ®
             </h1>
-            <p className="font-merriweather text-2xl sm:text-4xl w-auto sm:w-96 pl-3 sm:pl-6 border-l-4 border-secondary mx-4">
+            <p className=" text-2xl sm:text-4xl w-auto sm:w-96 pl-3 sm:pl-6 border-l-4 border-secondary mx-4">
               Soluciones Reales A<br />
               Problemas Reales
             </p>

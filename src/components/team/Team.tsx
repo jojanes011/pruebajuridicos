@@ -20,7 +20,7 @@ const Team = () => {
         <TeamMember
           colSpan="col-span-1 sm:col-span-3"
           title="Jairo Iván Florez Guerrero"
-          job="Fundador de la firma"
+          job="Director General"
           img="/images/equipo/jairo2.jpg"
         />
         <TeamMember

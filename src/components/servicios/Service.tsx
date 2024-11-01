@@ -20,7 +20,7 @@ const Service = ({
       <div className="flex flex-col sm:flex-row justify-normal sm:justify-between w-full sm:w-[1200px] mx-auto bg-white rounded-b-[40px] sm:rounded-r-[40px] shadow-xl">
         <div className="flex flex-col space-y-4 sm:space-y-8 py-4 sm:py-8 px-4 sm:px-16 w-full sm:w-1/2 order-2 sm:order-1">
           <div>
-            <h3 className="font-merriweather text-xl sm:text-3xl underline text-primary font-bold">
+            <h3 className=" text-xl sm:text-3xl underline text-primary font-bold">
               {title}
             </h3>
           </div>

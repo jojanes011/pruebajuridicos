@@ -30,11 +30,11 @@ const Cases = () => {
             <p className="text-xl font-bold">AÑOS</p>
           </div>
           <div className="w-full sm:w-[300px] py-8 bg-white bg-opacity-10 mr-0.5 text-center">
-            <p className="text-4xl font-bold">300+</p>
+            <p className="text-4xl font-bold">5000+</p>
             <p className="text-xl font-bold">PROCESOS</p>
           </div>
           <div className="w-full sm:w-[300px] py-8 sm:rounded-b-none sm:rounded-e-2xl rounded-b-2xl bg-white bg-opacity-10 text-center">
-            <p className="text-4xl font-bold">300+</p>
+            <p className="text-4xl font-bold">5000+</p>
             <p className="text-xl font-bold">CLIENTES</p>
           </div>
         </div>

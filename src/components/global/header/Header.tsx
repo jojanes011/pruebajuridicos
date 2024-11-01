@@ -75,7 +75,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
               width={64}
               height={64}
             />
-            <h1 className="font-merriweather text-xl">JURÍDICOS Y ASOCIADOS</h1>
+            <h1 className=" text-xl">JURÍDICOS Y ASOCIADOS</h1>
           </Link>
         </div>
 

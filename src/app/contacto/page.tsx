@@ -35,7 +35,7 @@ const page = () => {
                 icon="/icons/phone.svg"
                 color="bg-primary"
                 margin="ml-4"
-                title="304-299-9249"
+                title="320-315-6182"
               />
             </div>
           </div>
