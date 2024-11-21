@@ -13,7 +13,7 @@ const Hero = () => {
         loop
         muted
         playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-10"
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10 opacity-40"
       >
         <source src="/video.webm" type="video/webm" />
         <source src="/video.mp4" type="video/mp4" />
