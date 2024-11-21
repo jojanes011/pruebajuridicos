@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <main className="flex min-h-screen flex-col w-full">
+    <main className="flex flex-col min-h-screen">
       <Header showBorder={false} />
       {children}
       <Footer />

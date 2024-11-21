@@ -6,7 +6,7 @@ import { Fade } from "react-awesome-reveal";
 const Boss = () => {
   return (
     <Fade>
-      <section className="bg-white flex flex-col sm:flex-row items-start sm:items-center mt-20 sm:mt-36 w-full">
+      <section className="bg-white flex flex-col sm:flex-row items-start sm:items-center mt-20 sm:mt-0 w-full">
         <div className="w-full sm:w-1/3">
           <Image
             src="/images/equipo/jairo.jpg"
