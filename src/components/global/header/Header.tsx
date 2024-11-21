@@ -9,9 +9,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Collapse, Drawer } from "@mui/material";
 import { redirectWhatsapp } from "@/src/utils/functions";
+import { usePathname } from "next/navigation";
 
 export default function Header({ showBorder = true, hasBackground = false }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const [openCollapse, setOpenCollapse] = useState(false);
@@ -51,7 +53,7 @@ export default function Header({ showBorder = true, hasBackground = false }) {
 
   return (
     <AppBar
-      position="sticky"
+      position={pathname === "/" ? "absolute" : "sticky"}
       color="transparent"
       elevation={0}
       sx={{
