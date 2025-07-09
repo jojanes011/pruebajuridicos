@@ -22,7 +22,7 @@ const Team = () => {
         <TeamMember
           title="Jairo Iván Florez Guerrero"
           job="Director General"
-          img="/images/equipo/jairo2.jpg"
+          img="/images/equipo/jairo2.webp"
         />
       </div>
       
@@ -31,17 +31,17 @@ const Team = () => {
         <TeamMember
           title="Jorge Cediel Teran"
           job="Abogado de la firma"
-          img="/images/equipo/jorge.jpg"
+          img="/images/equipo/jorge.webp"
         />
         <TeamMember
           title="Laura Isabel Gutiérrez Perez y Soto"
           job="Abogada de la firma"
-          img="/images/equipo/laura.jpg"
+          img="/images/equipo/laura.webp"
         />
         <TeamMember
           title="Sara Pinto"
-          job="Abogada de la firma"
-          img="/images/equipo/sara.jpg"
+          job="Dependiente judicial"
+          img="/images/equipo/sara.webp"
         />
       </div>
     </section>

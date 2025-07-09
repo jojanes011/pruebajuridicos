@@ -16,6 +16,7 @@ const TeamMember: FC<TeamMemberProps> = ({ colSpan, img, title, job }) => {
         alt={title}
         width={250}
         height={100}
+        priority
         className="border-b border-black rounded-t-lg"
       />
       <p className="text-sm text-tertiary font-bold">{job}</p>
