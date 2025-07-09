@@ -16,22 +16,22 @@ const Team = () => {
           Excelencia
         </p>
       </div>
-      <div className="w-full sm:w-[1200px] grid grid-cols-1 sm:grid-cols-3 place-items-center place-content-between mx-auto py-8 gap-8">
+      
+      {/* Director General - Jerarquía principal */}
+      <div className="w-full sm:w-[1200px] mx-auto py-8 flex justify-center">
         <TeamMember
-          colSpan="col-span-1 sm:col-span-3"
           title="Jairo Iván Florez Guerrero"
           job="Director General"
           img="/images/equipo/jairo2.jpg"
         />
+      </div>
+      
+      {/* Abogados de la firma - Segunda fila */}
+      <div className="w-full sm:w-[1200px] grid grid-cols-1 sm:grid-cols-2 place-items-center mx-auto gap-8 pb-8">
         <TeamMember
           title="Jorge Cediel Teran"
           job="Abogado de la firma"
           img="/images/equipo/jorge.jpg"
-        />
-        <TeamMember
-          title="María Andreina Portilla"
-          job="Abogado de la firma"
-          img="/images/equipo/maria.jpg"
         />
         <TeamMember
           title="Laura Isabel Gutiérrez Perez y Soto"
