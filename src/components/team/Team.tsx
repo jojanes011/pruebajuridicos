@@ -27,7 +27,7 @@ const Team = () => {
       </div>
       
       {/* Abogados de la firma - Segunda fila */}
-      <div className="w-full sm:w-[1200px] grid grid-cols-1 sm:grid-cols-2 place-items-center mx-auto gap-8 pb-8">
+      <div className="w-full sm:w-[1200px] grid grid-cols-1 sm:grid-cols-3 place-items-center mx-auto gap-8 pb-8">
         <TeamMember
           title="Jorge Cediel Teran"
           job="Abogado de la firma"
@@ -37,6 +37,11 @@ const Team = () => {
           title="Laura Isabel Gutiérrez Perez y Soto"
           job="Abogada de la firma"
           img="/images/equipo/laura.jpg"
+        />
+        <TeamMember
+          title="Sara Pinto"
+          job="Abogada de la firma"
+          img="/images/equipo/sara.jpg"
         />
       </div>
     </section>
